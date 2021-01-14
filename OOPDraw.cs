@@ -26,8 +26,10 @@ namespace Drawing
             var gr = e.Graphics;
             var a = new Point(20,30);
             var b = new Point(400,500);
+            var c = new Point(700, 500);
             gr.DrawLine(currentPen,a,b);
-            gr.
+            gr.DrawLine(currentPen, b,c);
+            gr.DrawLine(currentPen,c,a);
         }
     }
 }
