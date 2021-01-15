@@ -20,16 +20,34 @@ namespace Drawing
 
         Pen currentPen = new Pen(Color.Red);
 
+        private bool dragging = false;
+        Point startOfDrag = Point.Empty;
+        Point lastMousePosition = Point.Empty;
+
         private void Canvas_Paint(object sender, PaintEventArgs e)
         {
-            currentPen.Width = 5;
             var gr = e.Graphics;
-            var a = new Point(20,30);
-            var b = new Point(400,500);
-            var c = new Point(700, 500);
-            gr.DrawLine(currentPen,a,b);
-            gr.DrawLine(currentPen, b,c);
-            gr.DrawLine(currentPen,c,a);
+            gr.DrawLine(currentPen,startOfDrag,lastMousePosition);
+        }
+
+        private void OOPDraw_MouseDown(object sender, MouseEventArgs e)
+        {
+            dragging = true;
+            startOfDrag = lastMousePosition = e.Location;
+        }
+
+        private void OOPDraw_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (dragging)
+            {
+                lastMousePosition = e.Location;
+                Refresh();
+            }
+        }
+
+        private void OOPDraw_MouseUp(object sender, MouseEventArgs e)
+        {
+            dragging = false;
         }
     }
 }

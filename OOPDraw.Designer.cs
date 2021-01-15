@@ -50,6 +50,9 @@
             this.Controls.Add(this.Canvas);
             this.Name = "OOPDraw";
             this.Text = "OOPDraw";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OOPDraw_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.OOPDraw_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.OOPDraw_MouseUp);
             ((System.ComponentModel.ISupportInitialize)(this.Canvas)).EndInit();
             this.ResumeLayout(false);
 
