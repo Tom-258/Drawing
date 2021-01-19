@@ -33,6 +33,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Colour = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.Shape = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Canvas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -41,7 +43,7 @@
             this.Canvas.BackColor = System.Drawing.SystemColors.Window;
             this.Canvas.Location = new System.Drawing.Point(198, 42);
             this.Canvas.Name = "Canvas";
-            this.Canvas.Size = new System.Drawing.Size(957, 478);
+            this.Canvas.Size = new System.Drawing.Size(1188, 586);
             this.Canvas.TabIndex = 0;
             this.Canvas.TabStop = false;
             this.Canvas.Click += new System.EventHandler(this.Canvas_Click);
@@ -94,11 +96,35 @@
             this.label2.Text = "Pen Color";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
+            // Shape
+            // 
+            this.Shape.FormattingEnabled = true;
+            this.Shape.Items.AddRange(new object[] {
+            "Line",
+            "Rectangle"});
+            this.Shape.Location = new System.Drawing.Point(25, 230);
+            this.Shape.Name = "Shape";
+            this.Shape.Size = new System.Drawing.Size(121, 23);
+            this.Shape.TabIndex = 5;
+            this.Shape.SelectedIndexChanged += new System.EventHandler(this.Shape_SelectedIndexChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(25, 212);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(39, 15);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Shape";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
             // OOPDraw
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1236, 588);
+            this.ClientSize = new System.Drawing.Size(1459, 655);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.Shape);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Colour);
             this.Controls.Add(this.label1);
@@ -122,6 +148,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox Colour;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox Shape;
+        private System.Windows.Forms.Label label3;
     }
 }
 
