@@ -13,10 +13,7 @@ namespace Drawing
         }
         public override void Draw(Graphics g)
         {
-            int x = Math.Min(X1, X2);
-            int y = Math.Min(Y1, Y2);
-            int w = Math.Max(X1, X2) - x;
-            int h = Math.Max(Y1, Y2) - y;
+            var (x, y, w, h) = EnclosingRectangle();
             g.DrawRectangle(Pen, x, y, w, h);
         }
        

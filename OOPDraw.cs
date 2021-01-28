@@ -23,7 +23,7 @@ namespace Drawing
 
         Pen currentPen = new Pen(Color.Red);
 
-        private bool dragging = false;
+        private bool _dragging = false;
         Point startOfDrag = Point.Empty;
         Point lastMousePosition = Point.Empty;
         List<Shape> shapes = new List<Shape>();
@@ -40,7 +40,7 @@ namespace Drawing
 
         private void OOPDraw_MouseDown(object sender, MouseEventArgs e)
         {
-            dragging = true;
+            _dragging = true;
             startOfDrag = lastMousePosition = e.Location;
             switch (Shape.Text)
             {
@@ -61,7 +61,7 @@ namespace Drawing
 
         private void OOPDraw_MouseMove(object sender, MouseEventArgs e)
         {
-            if (dragging)
+            if (_dragging)
             {
                 Shape shape = shapes.Last();
                 shape.GrowTo(e.X,e.Y);
@@ -72,12 +72,12 @@ namespace Drawing
 
         private void OOPDraw_MouseUp(object sender, MouseEventArgs e)
         {
-            dragging = false;
+            _dragging = false;
         }
 
         private void LineWidth_SelectedIndexChanged(object sender, EventArgs e)
         {
-            float width = currentPen.Width;
+            var width = currentPen.Width;
             switch (LineWidth.Text)
             {
                 case "Thin":
@@ -110,7 +110,7 @@ namespace Drawing
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Color color = currentPen.Color;
+            var color = currentPen.Color;
             switch (Colour.Text)
             {
                 case "Red":

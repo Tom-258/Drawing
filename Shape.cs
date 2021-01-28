@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 
 namespace Drawing
 {
@@ -26,6 +27,15 @@ namespace Drawing
         public Shape(Pen p, int x1, int y1) : this(p, x1, y1, x1, y1)
         {
             
+        }
+
+        public (int, int, int, int) EnclosingRectangle()
+        {
+            var x = Math.Min(X1, X2);
+            var y = Math.Min(Y1, Y2);
+            var w = Math.Max(X1, X2) - x;
+            var h = Math.Max(Y1, Y2) - y;
+            return (x, y, w, h);
         }
         public abstract void Draw(Graphics graphics);
 
