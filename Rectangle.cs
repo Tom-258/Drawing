@@ -16,6 +16,12 @@ namespace Drawing
             var (x, y, w, h) = EnclosingRectangle();
             g.DrawRectangle(Pen, x, y, w, h);
         }
-       
+        public bool FullySurrounds(Shape s)
+        {
+            var (x, y, w, h) = this.EnclosingRectangle();
+            var (xs, ys, ws, hs) = s.EnclosingRectangle();
+            return x < xs && y < ys && x + w > xs + ws && y + h > ys + hs;
+        }
+
     }
 }

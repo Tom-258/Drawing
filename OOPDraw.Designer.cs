@@ -35,13 +35,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.Shape = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.Action = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Canvas)).BeginInit();
             this.SuspendLayout();
             // 
             // Canvas
             // 
             this.Canvas.BackColor = System.Drawing.SystemColors.Window;
-            this.Canvas.Location = new System.Drawing.Point(198, 42);
+            this.Canvas.Location = new System.Drawing.Point(201, 42);
             this.Canvas.Name = "Canvas";
             this.Canvas.Size = new System.Drawing.Size(1188, 586);
             this.Canvas.TabIndex = 0;
@@ -120,11 +122,36 @@
             this.label3.Text = "Shape";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
+            // Action
+            // 
+            this.Action.FormattingEnabled = true;
+            this.Action.Items.AddRange(new object[] {
+            "Draw",
+            "Move",
+            "Select",
+            "Group"});
+            this.Action.Location = new System.Drawing.Point(25, 302);
+            this.Action.Name = "Action";
+            this.Action.Size = new System.Drawing.Size(121, 23);
+            this.Action.TabIndex = 7;
+            this.Action.SelectedIndexChanged += new System.EventHandler(this.Action_SelectedIndexChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(26, 284);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(42, 15);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Action";
+            // 
             // OOPDraw
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1459, 655);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.Action);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.Shape);
             this.Controls.Add(this.label2);
@@ -152,6 +179,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox Shape;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox Action;
+        private System.Windows.Forms.Label label4;
     }
 }
 
